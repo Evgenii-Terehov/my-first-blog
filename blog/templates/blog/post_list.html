@@ -3,11 +3,13 @@
 		<title>Django blog from James</title>
 	</head>
 	<body>
+	{% for post in posts %}
 		<div>
 			<h1>First hadder</h1>
 			<p>This is paragraph, hi is so small, but it doesn't metter</p>
 			<em>This is em text</em>
 		</div>
+	{% endfor %}
 
 		<div>
 			<p>Time now is: 20:42</p>
@@ -15,16 +17,34 @@
 			<h2><a href="https://djangogirls.org">klick</a></h2>
 		</div>
 		<div>
-
+		{% for post in posts %}
 			<strong>This is strong text</strong>
 			<h3>Third hadder</h3>
 			<p>Third hadder, like be first and second, but third<br />bla-bla-bla</p>
+		{% endfor %}
 		</div>
 		<div>
+		{% for post in posts %}
 			<ul>This is a list</ul><ul>This is a list 1</ul><ul>This is a list 2</ul><ul>This is a list 3</ul>
+		{% endfor %}
 		</div>
 		<div>
 			<p>This is for git status</p>
 		</div>
+		#{% for post in posts %}
+				#{{ post }}
+			#{% endfor %}
+
+		<div>
+    	<h1><a href="/">Django Girls Blog</a></h1>
+	</div>
+
+	{% for post in posts %}
+	    <div>
+	        <p>published: {{ post.published_date }}</p>
+	        <h1><a href="">{{ post.title }}</a></h1>
+	        <p>{{ post.text|linebreaksbr }}</p>
+	    </div>
+	{% endfor %}
 
 	</body>
